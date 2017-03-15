@@ -53,4 +53,10 @@ public class RPSTest {
     assertEquals(expected, testRPS.determineWinner("scissors", "scissors"));
   }
 
+  @Test
+  public void computerChooses_shouldBeAString_true() {
+    Game testGame = new Game();
+    String computerChoice =  testGame.determineComputerChoice()
+    assertEquals(true, computerChoice instanceof String);
+  }
 }
