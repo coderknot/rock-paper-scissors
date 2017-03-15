@@ -37,17 +37,18 @@ public class App {
 
       System.out.println("" + player1 + "- rock, paper, scissors?");
       String player1choice = console.readLine();
+      String computerChoice = game.determineComputerChoice();
+      String message = "The computer played: " + computerChoice;
 
 
-
-      if(game.determineWinner(player1choice, game.determineComputerChoice()).equals("player1")){
-        System.out.println("Winner: " + player1);
-      } else if (game.determineWinner(player1choice, game.determineComputerChoice()).equals("player1")){
-        System.out.println("Winner: The Computer");
-      } else if (game.determineWinner(player1choice, game.determineComputerChoice()).equals("tie")) {
-        System.out.println("Tie!");
+      if(game.determineWinner(player1choice, computerChoice).equals("player1")){
+        System.out.println("\n -----------------------------\n"+ message +"\nWinner: " + player1 + "\n -----------------------------\n");
+      } else if (game.determineWinner(player1choice, computerChoice).equals("player2")){
+        System.out.println("\n -----------------------------\n"+ message +"\nWinner: The Computer\n -----------------------------\n");
+      } else if (game.determineWinner(player1choice, computerChoice).equals("tie")) {
+        System.out.println("\n -----------------------------\n"+ message +"\nTie!\n -----------------------------\n");
       } else {
-        System.out.println("I don't think you entered a proper input!");
+        System.out.println("\n -----------------------------\n"+ message +"\nI don't think you entered a proper input! I guess the computer Wins!\n -----------------------------\n");
       }
 
     } else {
